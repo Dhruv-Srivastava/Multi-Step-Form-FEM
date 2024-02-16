@@ -1,42 +1,89 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+
+:root {
+  --marine-blue: hsl(213, 96%, 18%);
+  --purplish-blue: hsl(243, 100%, 62%);
+  --pastel-blue: hsl(228, 100%, 84%);
+  --light-blue: hsl(206, 94%, 87%);
+  --strawberry-red: hsl(354, 84%, 57%);
+  --cool-gray: hsl(231, 11%, 63%);
+  --light-gray: hsl(229, 24%, 87%);
+  --magnolia: hsl(217, 100%, 97%);
+  --wlabaster: hsl(231, 100%, 99%);
+  --white: hsl(0, 0%, 100%);
+  --green: hsl(132, 56%, 59%);
+  --black: hsl(0, 0%, 0%);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: "Ubuntu", sans-serif;
+  background-color: var(--light-gray);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+
+main#form-container{
+  max-width: 1400px;
+  background-color: var(--white);
+  height: 80vh;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  min-width:900px;
+  border-radius: 10px;
+  padding: 10px;
 }
 
-.card {
-  padding: 2em;
+#form-container .navbar{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-image: url("./assets/images/bg-sidebar-desktop.svg");
+  border-radius: 5px;
+  color: var(--wlabaster);
+  padding-top: 30px;
+  padding-left: 30px;
+  font-size: 16px;
 }
 
-.read-the-docs {
-  color: #888;
+
+.navbar .nav-item{
+  display: flex;
+  gap: 20px;
+  text-transform: uppercase;
 }
+
+.nav-item .view-number{
+  border: 1px solid var(--wlabaster);
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.view-number.active{
+  background-color: var(--green);
+  color: var(--black);
+  border: none;
+}
+
+.nav-item .view-info .step-number{
+  color: var(--light-gray);
+  font-size: 12px
+}
+.nav-item .view-info .step-name{
+  font-weight: 700;
+}
+
