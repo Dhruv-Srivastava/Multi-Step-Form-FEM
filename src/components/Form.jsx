@@ -10,12 +10,23 @@ import Footer from "./Footer";
 export default function Form() {
   const [formSectionView, setFormSectionView] = useState(1);
 
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+  });
+
   return (
     <main id="form-container">
       <Navbar formSectionView={formSectionView} />
-      <section id="form-content">
+      <section id="form-content-container">
         {formSectionView === 1 ? (
-          <Info />
+          <Info
+            formData={formData}
+            setFormData={setFormData}
+            formSectionView={formSectionView}
+            setFormSectionView={setFormSectionView}
+          />
         ) : formSectionView === 2 ? (
           <Plan />
         ) : formSectionView === 3 ? (
@@ -23,10 +34,6 @@ export default function Form() {
         ) : (
           <Summary />
         )}
-        <Footer
-          setFormSectionView={setFormSectionView}
-          formSectionView={formSectionView}
-        />
       </section>
     </main>
   );
