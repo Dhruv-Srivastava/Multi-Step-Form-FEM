@@ -29,6 +29,36 @@ body {
   background-color: var(--light-gray);
 }
 
+button{
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+  outline: none;
+}
+
+button.next-step{
+  color: var(--wlabaster);
+  background-color: var(--marine-blue);
+}
+
+button.go-back{
+  background: transparent;
+  color: var(--cool-gray);
+  font-weight: 500;
+}
+
+button.confirm{
+  color: var(--white);
+  background-color: var(--purplish-blue);
+}
+
+button.next-step:active,button.confirm:active{
+  transform: scale(0.95);
+}
+
 
 main#form-container{
   max-width: 1400px;
@@ -39,6 +69,13 @@ main#form-container{
   min-width:900px;
   border-radius: 10px;
   padding: 10px;
+}
+
+#form-content{
+  display: grid;
+  place-items: center;
+  grid-template-rows: 90% 30%;
+  padding: 75px;
 }
 
 #form-container .navbar{
@@ -86,4 +123,14 @@ main#form-container{
 .nav-item .view-info .step-name{
   font-weight: 700;
 }
+
+
+/* Footer */
+
+footer{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
 
