@@ -8,12 +8,14 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 
 export default function Form() {
-  const [formSectionView, setFormSectionView] = useState(1);
+  const [formSectionView, setFormSectionView] = useState(2);
 
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
+    plan: "",
+    duration: "year"
   });
 
   return (
@@ -28,7 +30,12 @@ export default function Form() {
             setFormSectionView={setFormSectionView}
           />
         ) : formSectionView === 2 ? (
-          <Plan />
+          <Plan
+            formData={formData}
+            setFormData={setFormData}
+            formSectionView={formSectionView}
+            setFormSectionView={setFormSectionView}
+          />
         ) : formSectionView === 3 ? (
           <AddOns />
         ) : (

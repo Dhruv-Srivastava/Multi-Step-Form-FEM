@@ -37,6 +37,7 @@ button {
   font-family: inherit;
   font-size: 12px;
   outline: none;
+  margin-top: 100px;
 }
 
 button.next-step {
@@ -72,6 +73,7 @@ main#form-container {
   background-color: var(--white);
   display: grid;
   grid-template-columns: 30% 70%;
+  min-height: 550px;
   min-width: 900px;
   border-radius: 10px;
   padding: 10px;
@@ -85,16 +87,20 @@ main#form-container {
   padding-block: 30px;
 }
 
+.form-content{
+  height: 100%;
+}
+
 .form-content .page-name {
   color: var(--marine-blue);
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .form-content .page-description {
   color: var(--cool-gray);
   font-size: 15px;
   font-weight: 500;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .form-content .label-container{
@@ -105,7 +111,7 @@ main#form-container {
   justify-content: space-between;
 }
 
-.form-content label{
+.form-content label.p-info{
   color: var(--marine-blue);
 }
 
@@ -115,7 +121,7 @@ main#form-container {
 }
 
 
-.form-content input{
+.form-content input[type="text"],.form-content input[type="email"]{
   display: block;
   width: 100%;
   outline: none;
@@ -183,6 +189,81 @@ main#form-container {
 }
 .nav-item .view-info .step-name {
   font-weight: 700;
+}
+
+
+/* Section 2- Select your plan*/
+
+.form-content input[type="radio"]{
+  display: none;
+}
+
+.form-content .plan-info-container{
+  display: flex;
+  gap: 20px;
+}
+
+.form-content label.plan-label{
+  border: 1px solid var(--cool-gray);
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: star;
+  padding: 20px 50px 10px 10px;
+  gap: 40px;
+  min-width: 160px;
+}
+
+label.plan-label img.plan-icon{
+  height: 50px;
+  width: 50px;
+}
+
+.form-content label.plan-label:hover{
+  background-color: var(--pastel-blue);
+  border-color: var(--purplish-blue);
+}
+
+.form-content label.plan-label:hover{
+  background-color: var(--pastel-blue);
+  border-color: var(--purplish-blue);
+}
+
+.plan-title{
+  font-size: 20px;
+  color: var(--marine-blue);
+  margin-bottom: 5px;
+}
+
+.plan-price{
+  font-size: 12px;
+  color: var(--cool-gray);
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.free{
+  color: var(--marine-blue);
+  font-size: 12px;
+  margin-bottom: 7.5px;
+  font-weight: 500;
+}
+
+.plan-duration-container{
+  background: var(--light-gray);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.plan-duration-container label{
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-right: 20px;
 }
 
 /* Footer */

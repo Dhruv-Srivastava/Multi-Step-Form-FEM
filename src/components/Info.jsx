@@ -44,7 +44,7 @@ export default function Info({
       </h5>
       <form onSubmit={handleSubmit}>
         <div className="label-container">
-          <label htmlFor="name">Name</label>
+          <label htmlFor="name" className="p-info">Name</label>
           {invalidClass && formData.name === "" && (
             <label htmlFor="name" className="error-label">This is a required field.</label>
           )}
@@ -64,7 +64,7 @@ export default function Info({
         />
 
         <div className="label-container">
-          <label htmlFor="email">Email Address</label>
+          <label htmlFor="email" className="p-info">Email Address</label>
           {invalidClass && formData.email === "" && (
             <label htmlFor="email" className="error-label">This is a required field.</label>
           )}
@@ -84,7 +84,7 @@ export default function Info({
         />
 
         <div className="label-container">
-          <label htmlFor="phone">Phone Number</label>
+          <label htmlFor="phone" className="p-info">Phone Number</label>
           {invalidClass && formData.phone === "" && (
             <label htmlFor="phone" className="error-label">This is a required field.</label>
           )}
