@@ -25,9 +25,9 @@ export default function ServiceSummary({ name, duration, setFormSectionView ,cla
           }
         </h3>
         {name in planList && (
-          <a className="go-to-plan" onClick={() => setFormSectionView(2)}>
+          <button className="go-to-plan" onClick={() => setFormSectionView(2)} type="button">
             Change
-          </a>
+          </button>
         )}
       </div>
       <h3 className={className}>

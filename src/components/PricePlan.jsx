@@ -5,7 +5,21 @@ export default function PricePlan({ icon, planType, formData, setFormData }) {
 
   return (
     <>
-      <label
+      <input
+        type="radio"
+        name="plan"
+        id={plan}
+        value={plan}
+        checked={plan === formData.plan}
+        required
+        onChange={(e) =>
+          setFormData((prev) => ({
+            ...prev,
+            [e.target.name]: e.target.value,
+          }))
+        }
+      />
+            <label
         htmlFor={plan}
         className={`plan-label ${plan === formData.plan ? "bg-active" : ""}`}
       >
@@ -23,20 +37,6 @@ export default function PricePlan({ icon, planType, formData, setFormData }) {
           )}
         </div>
       </label>
-      <input
-        type="radio"
-        name="plan"
-        id={plan}
-        value={plan}
-        checked={plan === formData.plan}
-        required
-        onChange={(e) =>
-          setFormData((prev) => ({
-            ...prev,
-            [e.target.name]: e.target.value,
-          }))
-        }
-      />
     </>
   );
 }

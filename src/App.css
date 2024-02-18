@@ -36,8 +36,7 @@ button {
   cursor: pointer;
   font-family: inherit;
   font-size: 12px;
-  outline: none;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 button.next-step {
@@ -45,6 +44,11 @@ button.next-step {
   background-color: var(--marine-blue);
   display: block;
   margin-left: auto;
+  transition: 200ms background-color ease-in;
+}
+
+button.next-step:hover {
+  background-color: hsla(213, 96%, 18%, 0.919);
 }
 
 button.go-back {
@@ -61,6 +65,10 @@ button.go-back:hover {
 button.confirm {
   color: var(--white);
   background-color: var(--purplish-blue);
+}
+
+button.confirm:hover {
+  background-color: hsla(243, 100%, 62%, 0.955);
 }
 
 button.next-step:active,
@@ -196,7 +204,14 @@ main#form-container {
 /* Section 2- Select your plan*/
 
 .form-content input[type="radio"] {
-  display: none;
+  position: absolute;
+  z-index: -1;
+}
+
+.form-content input[type="radio"]:focus + label.plan-label {
+  -webkit-box-shadow: 0px 13px 21px -11px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 13px 21px -11px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 13px 21px -11px rgba(0, 0, 0, 0.75);
 }
 
 .form-content .plan-info-container {
@@ -214,6 +229,7 @@ main#form-container {
   padding: 20px 50px 10px 10px;
   gap: 40px;
   min-width: 160px;
+  position: relative;
 }
 
 label.plan-label img.plan-icon {
@@ -266,6 +282,10 @@ label.plan-label img.plan-icon {
   margin-right: 20px;
 }
 
+.form-content input[type="radio"]:focus + label.label-duration{
+  text-decoration: underline;
+}
+
 .plan-duration-container .toggle {
   height: 100px;
   width: 50px;
@@ -274,7 +294,6 @@ label.plan-label img.plan-icon {
 
 /* Section 3- Add Ons */
 
-/* Footer */
 
 .form-content .add-ons-container {
   display: flex;
@@ -297,8 +316,13 @@ label.plan-label img.plan-icon {
   border-color: var(--purplish-blue);
 }
 
-label.add-on-label input[type="checkbox"] {
-  display: none;
+.add-ons-container input[type="checkbox"] {
+  position: absolute;
+  z-index: -1;
+}
+
+.add-ons-container input[type="checkbox"]:focus + label.add-on-label{
+  border-color: var(--purplish-blue);
 }
 
 label.add-on-label .checkbox {
@@ -370,6 +394,9 @@ label.add-on-label .add-on-price {
   color: var(--cool-gray);
   text-decoration: underline;
   cursor: pointer;
+  background-color: transparent;
+  margin-top: 0;
+  padding: 0;
 }
 
 .form-content .final-price {
@@ -388,7 +415,7 @@ label.add-on-label .add-on-price {
   font-size: 22px;
 }
 
-.submit-container{
+.submit-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -396,11 +423,11 @@ label.add-on-label .add-on-price {
   gap: 30px;
 }
 
-.submit-container h1{
+.submit-container h1 {
   color: var(--marine-blue);
 }
 
-.submit-container p{
+.submit-container p {
   color: var(--cool-gray);
   font-size: 18px;
   line-height: 1.5;
@@ -408,6 +435,7 @@ label.add-on-label .add-on-price {
 }
 
 footer {
+  margin-top: auto;
   display: flex;
   flex-direction: row-reverse;
   width: 100%;

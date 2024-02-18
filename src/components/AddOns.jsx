@@ -9,6 +9,7 @@ export default function AddOns({
 ) {
   function handleSubmit(e) {
     e.preventDefault();
+    console.log(e.nativeEvent.submitter)
     if (e.nativeEvent.submitter.className === "go-back") {
       setFormSectionView((prev) => prev - 1);
       return;
@@ -19,9 +20,9 @@ export default function AddOns({
   return (
     <div className="form-content">
       <h1 className="page-name">Pick add-ons</h1>
-      <h5 className="page-description">
+      <h2 className="page-description">
         Add-ons help enhance your gaming experience.
-      </h5>
+      </h2>
 
       <form onSubmit={handleSubmit}>
         <div className="add-ons-container">

@@ -7,10 +7,9 @@ import Summary from "./Summary";
 import Navbar from "./Navbar";
 
 export default function Form() {
-  const [formSectionView, setFormSectionView] = useState(4);
+  const [formSectionView, setFormSectionView] = useState(1);
 
   const [formSubmitted, setFormSubmitted] = useState(false);
-
 
   const [formData, setFormData] = useState({
     name: "",
@@ -27,7 +26,10 @@ export default function Form() {
 
   return (
     <main id="form-container">
-      <Navbar formSectionView={formSectionView} setFormSectionView={setFormSectionView}/>
+      <Navbar
+        formSectionView={formSectionView}
+        setFormSectionView={setFormSectionView}
+      />
       <section id="form-content-container">
         {formSectionView === 1 ? (
           <Info

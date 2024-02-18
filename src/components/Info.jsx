@@ -36,9 +36,9 @@ export default function Info({
   return (
     <div className="form-content">
       <h1 className="page-name">Personal info</h1>
-      <h5 className="page-description">
+      <h2 className="page-description">
         Please provide your name, email address, and phone number.
-      </h5>
+      </h2>
       <form onSubmit={handleSubmit}>
         <div className="label-container">
           <label htmlFor="name" className="p-info">

@@ -12,19 +12,19 @@ export default function Plan({
 }) {
   function handleSubmit(e) {
     e.preventDefault();
-    if(e.nativeEvent.submitter.className==="go-back"){
-      setFormSectionView(prev=>prev-1)
-      return
+    if (e.nativeEvent.submitter.className === "go-back") {
+      setFormSectionView((prev) => prev - 1);
+      return;
     }
 
-    setFormSectionView(prev=>prev+1)
+    setFormSectionView((prev) => prev + 1);
   }
   return (
     <div className="form-content">
       <h1 className="page-name">Select your plan</h1>
-      <h5 className="page-description">
+      <h2 className="page-description">
         You have the option of monthly or yearly billing.
-      </h5>
+      </h2>
 
       <form onSubmit={handleSubmit}>
         <div className="plan-info-container">
@@ -49,17 +49,6 @@ export default function Plan({
         </div>
 
         <div className="plan-duration-container">
-          <label
-            htmlFor="monthly"
-            style={{
-              color:
-                formData.duration === "month"
-                  ? "var(--marine-blue)"
-                  : "var(--cool-gray)",
-            }}
-          >
-            Monthly
-          </label>
           <input
             type="radio"
             name="duration"
@@ -74,18 +63,20 @@ export default function Plan({
             }
           />
 
-          <span className="toggle"></span>
           <label
-            htmlFor="yearly"
+            htmlFor="monthly"
             style={{
               color:
-                formData.duration === "year"
+                formData.duration === "month"
                   ? "var(--marine-blue)"
                   : "var(--cool-gray)",
             }}
+            className="label-duration"
           >
-            Yearly
+            Monthly
           </label>
+
+          <span className="toggle"></span>
           <input
             type="radio"
             name="duration"
@@ -99,8 +90,21 @@ export default function Plan({
               }))
             }
           />
+
+          <label
+            htmlFor="yearly"
+            style={{
+              color:
+                formData.duration === "year"
+                  ? "var(--marine-blue)"
+                  : "var(--cool-gray)",
+            }}
+            className="label-duration"
+          >
+            Yearly
+          </label>
         </div>
-        <Footer formSectionView={formSectionView}/>
+        <Footer formSectionView={formSectionView} />
       </form>
     </div>
   );

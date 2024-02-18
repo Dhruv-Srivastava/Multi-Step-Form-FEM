@@ -49,9 +49,9 @@ export default function Summary({
       ) : (
         <div className="form-content">
           <h1 className="page-name">Finishing up</h1>
-          <h5 className="page-description">
+          <h2 className="page-description">
             Double-check everything looks OK before confirming.
-          </h5>
+          </h2>
 
           <form onSubmit={handleSubmit}>
             <div className="summary-info-container">
