@@ -7,7 +7,10 @@ import Summary from "./Summary";
 import Navbar from "./Navbar";
 
 export default function Form() {
-  const [formSectionView, setFormSectionView] = useState(1);
+  const [formSectionView, setFormSectionView] = useState(4);
+
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
 
   const [formData, setFormData] = useState({
     name: "",
@@ -15,16 +18,16 @@ export default function Form() {
     phone: "",
     plan: "arcade",
     duration: "year",
-    addOns:{
-      onlineService:true,
-      largerStorage:false,
-      customProfile:true,
-    }
+    addOns: {
+      onlineService: false,
+      largerStorage: false,
+      customProfile: false,
+    },
   });
 
   return (
     <main id="form-container">
-      <Navbar formSectionView={formSectionView} />
+      <Navbar formSectionView={formSectionView} setFormSectionView={setFormSectionView}/>
       <section id="form-content-container">
         {formSectionView === 1 ? (
           <Info
@@ -48,7 +51,14 @@ export default function Form() {
             setFormSectionView={setFormSectionView}
           />
         ) : (
-          <Summary />
+          <Summary
+            formData={formData}
+            setFormData={setFormData}
+            formSectionView={formSectionView}
+            setFormSectionView={setFormSectionView}
+            formSubmitted={formSubmitted}
+            setFormSubmitted={setFormSubmitted}
+          />
         )}
       </section>
     </main>

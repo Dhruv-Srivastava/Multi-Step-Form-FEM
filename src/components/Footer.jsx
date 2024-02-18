@@ -1,14 +1,14 @@
 import Button from "./Button";
 
-export default function Footer({ formSectionView }) {
+export default function Footer({ formSectionView, variant="next-step", content="Next Step"}) {
   return (
     <footer>
       <Button
-        variant="next-step"
+        variant={variant}
         formSectionView={formSectionView}
         type="submit"
       >
-        Next Step
+      {content}
       </Button>
 
       {formSectionView > 1 && (

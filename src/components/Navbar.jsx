@@ -17,6 +17,7 @@ export default function Navbar({ formSectionView }) {
         stepNumber={1}
         stepName={"your info"}
         active={formSectionView === 1}
+        
       />
       <NavItem
         stepNumber={2}
