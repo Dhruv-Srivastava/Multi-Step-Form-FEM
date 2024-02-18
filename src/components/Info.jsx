@@ -22,9 +22,6 @@ export default function Info({
   function handleSubmit(e) {
     e.preventDefault();
 
-    if (formData.name === "" || formData.email === "" || formData.phone === "")
-      return;
-
     setFormSectionView((prev) => {
       if (prev === 4) return prev;
 
@@ -44,9 +41,13 @@ export default function Info({
       </h5>
       <form onSubmit={handleSubmit}>
         <div className="label-container">
-          <label htmlFor="name" className="p-info">Name</label>
+          <label htmlFor="name" className="p-info">
+            Name
+          </label>
           {invalidClass && formData.name === "" && (
-            <label htmlFor="name" className="error-label">This is a required field.</label>
+            <label htmlFor="name" className="error-label">
+              This is a required field
+            </label>
           )}
         </div>
         <input
@@ -64,9 +65,13 @@ export default function Info({
         />
 
         <div className="label-container">
-          <label htmlFor="email" className="p-info">Email Address</label>
+          <label htmlFor="email" className="p-info">
+            Email Address
+          </label>
           {invalidClass && formData.email === "" && (
-            <label htmlFor="email" className="error-label">This is a required field.</label>
+            <label htmlFor="email" className="error-label">
+              This is a required field
+            </label>
           )}
         </div>
         <input
@@ -84,9 +89,13 @@ export default function Info({
         />
 
         <div className="label-container">
-          <label htmlFor="phone" className="p-info">Phone Number</label>
+          <label htmlFor="phone" className="p-info">
+            Phone Number
+          </label>
           {invalidClass && formData.phone === "" && (
-            <label htmlFor="phone" className="error-label">This is a required field.</label>
+            <label htmlFor="phone" className="error-label">
+              This is a required field
+            </label>
           )}
         </div>
         <input
@@ -102,11 +111,10 @@ export default function Info({
           onInvalid={handleInvalid}
           required
         />
-        {/* <Footer
+        <Footer
           setFormSectionView={setFormSectionView}
           formSectionView={formSectionView}
-        /> */}
-        <button className="next-step">Next Step</button>
+        />
       </form>
     </div>
   );

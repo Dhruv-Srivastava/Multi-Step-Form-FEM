@@ -89,6 +89,7 @@ main#form-container {
 
 .form-content{
   height: 100%;
+  width: 100%;
 }
 
 .form-content .page-name {
@@ -157,6 +158,8 @@ main#form-container {
   padding-top: 30px;
   padding-left: 30px;
   font-size: 16px;
+  background-position: center;
+  background-size: cover;
 }
 
 .navbar .nav-item {
@@ -221,13 +224,12 @@ label.plan-label img.plan-icon{
 }
 
 .form-content label.plan-label:hover{
-  background-color: var(--pastel-blue);
   border-color: var(--purplish-blue);
 }
 
-.form-content label.plan-label:hover{
-  background-color: var(--pastel-blue);
-  border-color: var(--purplish-blue);
+.form-content label.bg-active{
+  background-color: hsla(228, 100%, 84%, 0.366);
+  border-color: var(--purplish-blue)
 }
 
 .plan-title{
@@ -251,7 +253,7 @@ label.plan-label img.plan-icon{
 }
 
 .plan-duration-container{
-  background: var(--light-gray);
+  background: hsla(229, 24%, 87%, 0.447);;
   border: none;
   border-radius: 10px;
   padding: 10px 20px;
@@ -266,7 +268,74 @@ label.plan-label img.plan-icon{
   margin-right: 20px;
 }
 
+.plan-duration-container .toggle{
+  height: 100px;
+  width: 50px;
+  background: red;
+}
+
+
+/* Section 3- Add Ons */
+
 /* Footer */
+
+.form-content .add-ons-container{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+.add-ons-container label.add-on-label{
+  width: 100%;
+  display: flex;
+  padding: 20px 15px;
+  gap: 15px;
+  border: 1px solid var(--cool-gray);
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.add-ons-container label.add-on-label:hover{
+  border-color: var(--purplish-blue);
+}
+
+label.add-on-label input[type="checkbox"]{
+  display: none;
+}
+
+label.add-on-label .checkbox{
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--cool-gray);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+label.add-on-label .add-on-name{
+  font-size: 16px;
+  color: var(--marine-blue);
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+label.add-on-label .add-on-description{
+  font-size: 14px;
+  color: var(--cool-gray);
+  font-weight: 700;
+}
+
+label.add-on-label .add-on-price{
+  margin-left: auto;
+  font-size: 16px;
+  color: var(--purplish-blue);
+}
+
+
+
 
 footer {
   display: flex;

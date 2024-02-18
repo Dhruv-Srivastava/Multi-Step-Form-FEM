@@ -1,23 +1,25 @@
 import Button from "./Button";
 
-export default function Footer({ setFormSectionView, formSectionView }) {
+export default function Footer({ formSectionView }) {
   return (
     <footer>
       <Button
         variant="next-step"
-        setFormSectionView={setFormSectionView}
         formSectionView={formSectionView}
+        type="submit"
       >
         Next Step
       </Button>
-      
-      <Button
-        variant="go-back"
-        setFormSectionView={setFormSectionView}
-        formSectionView={formSectionView}
-      >
-        Go Back
-      </Button>
+
+      {formSectionView > 1 && (
+        <Button
+          variant="go-back"
+          type="submit"
+          formSectionView={formSectionView}
+        >
+          Go Back
+        </Button>
+      )}
     </footer>
   );
 }

@@ -2,6 +2,7 @@ import iconArcade from "../assets/images/icon-arcade.svg";
 import iconAdvanced from "../assets/images/icon-advanced.svg";
 import iconPro from "../assets/images/icon-pro.svg";
 import PricePlan from "./PricePlan";
+import Footer from "./Footer";
 
 export default function Plan({
   formData,
@@ -9,14 +10,23 @@ export default function Plan({
   formSectionView,
   setFormSectionView,
 }) {
+  function handleSubmit(e) {
+    e.preventDefault();
+    if(e.nativeEvent.submitter.className==="go-back"){
+      setFormSectionView(prev=>prev-1)
+      return
+    }
+
+    setFormSectionView(prev=>prev+1)
+  }
   return (
     <div className="form-content">
       <h1 className="page-name">Select your plan</h1>
       <h5 className="page-description">
-        Please provide your name, email address, and phone number.
+        You have the option of monthly or yearly billing.
       </h5>
 
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="plan-info-container">
           <PricePlan
             icon={iconArcade}
@@ -63,6 +73,8 @@ export default function Plan({
               }))
             }
           />
+
+          <span className="toggle"></span>
           <label
             htmlFor="yearly"
             style={{
@@ -88,6 +100,7 @@ export default function Plan({
             }
           />
         </div>
+        <Footer formSectionView={formSectionView}/>
       </form>
     </div>
   );

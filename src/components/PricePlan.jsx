@@ -1,28 +1,22 @@
+import { planList } from "../utils/price";
+
 export default function PricePlan({ icon, planType, formData, setFormData }) {
-  console.log(formData);
-  const price = {
-    arcade: 90,
-    advanced: 120,
-    pro: 150,
-  };
+  const plan = planType.toLowerCase();
 
-  const plan=planType.toLowerCase()
-
-  const styles={
-    backgroundColor:plan===formData.plan?"var(--pastel-blue)":"",
-    bordeCcolor: plan===formData.plan?"var(--purplish-blue)":"",
-  }
   return (
     <>
-      <label htmlFor={plan} className="plan-label" style={styles}>
+      <label
+        htmlFor={plan}
+        className={`plan-label ${plan === formData.plan ? "bg-active" : ""}`}
+      >
         <img src={icon} alt="Plan Icon" className="plan-icon" />
         <div className="plan-info">
           <h3 className="plan-title">{planType}</h3>
           <p className="plan-price">
             $
             {formData.duration === "year"
-              ? `${price[plan]}/yr`
-              : `${price[plan] / 10}/mo`}
+              ? `${planList[plan] * 10}/yr`
+              : `${planList[plan]}/mo`}
           </p>
           {formData.duration === "year" && (
             <p className="free">2 months free</p>
@@ -34,7 +28,8 @@ export default function PricePlan({ icon, planType, formData, setFormData }) {
         name="plan"
         id={plan}
         value={plan}
-        checked={plan===formData.plan}
+        checked={plan === formData.plan}
+        required
         onChange={(e) =>
           setFormData((prev) => ({
             ...prev,
